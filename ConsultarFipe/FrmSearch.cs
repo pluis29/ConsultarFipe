@@ -2,8 +2,9 @@
 using ConsultarFipeLibrary.Services;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ConsultarFipe
@@ -43,14 +44,6 @@ namespace ConsultarFipe
         {
             this.lblLinkApi.LinkVisited = true;
             System.Diagnostics.Process.Start("https://github.com/deividfortuna/fipe");
-        }
-
-        private void btnFavorites_Click(object sender, System.EventArgs e)
-        {
-            this.Hide();
-            FrmFavorites frmFavorites = new FrmFavorites();
-            frmFavorites.ShowDialog();
-            this.Show();
         }
 
         private async void Rdo_Click(object sender, EventArgs e)
@@ -131,15 +124,7 @@ namespace ConsultarFipe
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            if (ValidateSearchForm() && IsNewSearch())
-            {
-                Debug.WriteLine($"ret form");
-                var value = await fipeApi.GetValueAsync(vehicle.Type.Name, vehicle.Brand.Code, vehicle.Model.Code, vehicle.Year.Code);
-                FillTable(value);
-            }
-        }
+
 
         private void FillTable(Value v)
         {
@@ -177,6 +162,78 @@ namespace ConsultarFipe
             return true;
         }
 
+        private void btnFavoritesList_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmFavorites frmFavorites = new FrmFavorites();
+            frmFavorites.ShowDialog();
+            this.Show();
+        }
 
+        private void btnFavorite_Click(object sender, EventArgs e)
+        {
+            if (IsTableFilled() && !IsVehicleInFavorites())
+            {
+                AddVehicleInList();
+                btnFavorite.ForeColor = Color.Green;
+                Task.Delay(1300).ContinueWith(_ =>
+                {
+                    btnFavorite.Invoke((Action)(() => btnFavorite.ForeColor = SystemColors.ControlText));
+                });
+                return;
+            }
+            else if (IsVehicleInFavorites())
+            {
+                btnFavorite.ForeColor = Color.Red;
+                Task.Delay(1300).ContinueWith(_ =>
+                {
+                    btnFavorite.Invoke((Action)(() => btnFavorite.ForeColor = SystemColors.ControlText));
+                });
+                MessageBox.Show("Este veículo já foi adicionado aos favoritos.");
+            }
+        }
+
+        private void AddVehicleInList()
+        {
+            VehicleFavorite vehicle = new VehicleFavorite
+            {
+                Marca = lblTlpBrandInfo.Text,
+                Modelo = lblTlpModelInfo.Text,
+                Ano = lblTlpYearInfo.Text,
+                Combustivel = lblTlpGasInfo.Text,
+                PrecoMedio = lblTlpPriceInfo.Text,
+                CodigoFipe = lblTlpFipeCodeInfo.Text,
+                MesReferencia = lblTlpReferenceInfo.Text
+            };
+            FavoritesManager.Add(vehicle);
+        }
+
+        private bool IsVehicleInFavorites()
+        {
+            return FavoritesManager.Favorites.Any(v =>
+            v.Marca == lblTlpBrandInfo.Text &&
+            v.Modelo == lblTlpModelInfo.Text &&
+            v.Ano == lblTlpYearInfo.Text);
+        }
+
+        private bool IsTableFilled()
+        {
+            return !string.IsNullOrWhiteSpace(lblTlpReferenceInfo.Text) &&
+                !string.IsNullOrWhiteSpace(lblTlpFipeCodeInfo.Text) &&
+                !string.IsNullOrWhiteSpace(lblTlpBrandInfo.Text) &&
+                !string.IsNullOrWhiteSpace(lblTlpModelInfo.Text) &&
+                !string.IsNullOrWhiteSpace(lblTlpGasInfo.Text) &&
+                !string.IsNullOrWhiteSpace(lblTlpYearInfo.Text) &&
+                !string.IsNullOrWhiteSpace(lblTlpPriceInfo.Text);
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (ValidateSearchForm() && IsNewSearch())
+            {
+                var value = await fipeApi.GetValueAsync(vehicle.Type.Name, vehicle.Brand.Code, vehicle.Model.Code, vehicle.Year.Code);
+                FillTable(value);
+            }
+        }
     }
 }

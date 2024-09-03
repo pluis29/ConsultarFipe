@@ -48,6 +48,10 @@
             this.lblTextDisclaimer = new System.Windows.Forms.Label();
             this.lblLinkApi = new System.Windows.Forms.LinkLabel();
             this.tlpVehiclesInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTlpPriceInfo = new System.Windows.Forms.Label();
+            this.lblTlpPrice = new System.Windows.Forms.Label();
+            this.lblTlpYearInfo = new System.Windows.Forms.Label();
+            this.lblTlpYear = new System.Windows.Forms.Label();
             this.lblTlpGasInfo = new System.Windows.Forms.Label();
             this.lblTlpGas = new System.Windows.Forms.Label();
             this.lblTlpModelInfo = new System.Windows.Forms.Label();
@@ -58,13 +62,9 @@
             this.lblTlpFipeCode = new System.Windows.Forms.Label();
             this.lblTlpReferenceInfo = new System.Windows.Forms.Label();
             this.lblTlpReference = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnFavorites = new System.Windows.Forms.Button();
-            this.lblTlpYear = new System.Windows.Forms.Label();
-            this.lblTlpYearInfo = new System.Windows.Forms.Label();
-            this.lblTlpPrice = new System.Windows.Forms.Label();
-            this.lblTlpPriceInfo = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnFavorite = new System.Windows.Forms.Button();
+            this.btnFavoritesList = new System.Windows.Forms.Button();
             this.grpVehiclesType.SuspendLayout();
             this.grpDisclaimer.SuspendLayout();
             this.tlpVehiclesInfo.SuspendLayout();
@@ -297,6 +297,52 @@
             this.tlpVehiclesInfo.Size = new System.Drawing.Size(492, 196);
             this.tlpVehiclesInfo.TabIndex = 17;
             // 
+            // lblTlpPriceInfo
+            // 
+            this.lblTlpPriceInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTlpPriceInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTlpPriceInfo.Font = new System.Drawing.Font("Verdana", 9.75F);
+            this.lblTlpPriceInfo.Location = new System.Drawing.Point(150, 168);
+            this.lblTlpPriceInfo.Name = "lblTlpPriceInfo";
+            this.lblTlpPriceInfo.Size = new System.Drawing.Size(339, 28);
+            this.lblTlpPriceInfo.TabIndex = 13;
+            this.lblTlpPriceInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTlpPrice
+            // 
+            this.lblTlpPrice.AutoSize = true;
+            this.lblTlpPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTlpPrice.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTlpPrice.Location = new System.Drawing.Point(3, 168);
+            this.lblTlpPrice.Name = "lblTlpPrice";
+            this.lblTlpPrice.Size = new System.Drawing.Size(141, 28);
+            this.lblTlpPrice.TabIndex = 12;
+            this.lblTlpPrice.Text = "Preço Médio:";
+            this.lblTlpPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTlpYearInfo
+            // 
+            this.lblTlpYearInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTlpYearInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTlpYearInfo.Font = new System.Drawing.Font("Verdana", 9.75F);
+            this.lblTlpYearInfo.Location = new System.Drawing.Point(150, 140);
+            this.lblTlpYearInfo.Name = "lblTlpYearInfo";
+            this.lblTlpYearInfo.Size = new System.Drawing.Size(339, 28);
+            this.lblTlpYearInfo.TabIndex = 11;
+            this.lblTlpYearInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTlpYear
+            // 
+            this.lblTlpYear.AutoSize = true;
+            this.lblTlpYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTlpYear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTlpYear.Location = new System.Drawing.Point(3, 140);
+            this.lblTlpYear.Name = "lblTlpYear";
+            this.lblTlpYear.Size = new System.Drawing.Size(141, 28);
+            this.lblTlpYear.TabIndex = 10;
+            this.lblTlpYear.Text = "Ano Modelo:";
+            this.lblTlpYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lblTlpGasInfo
             // 
             this.lblTlpGasInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -413,98 +459,53 @@
             this.lblTlpReference.Text = "Mês de referência:";
             this.lblTlpReference.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(394, 225);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(394, 225);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(103, 32);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button2
+            // btnFavorite
             // 
-            this.button2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(425, 459);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Favoritar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFavorite.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFavorite.Location = new System.Drawing.Point(425, 459);
+            this.btnFavorite.Name = "btnFavorite";
+            this.btnFavorite.Size = new System.Drawing.Size(79, 23);
+            this.btnFavorite.TabIndex = 9;
+            this.btnFavorite.Text = "Favoritar";
+            this.btnFavorite.UseVisualStyleBackColor = true;
+            this.btnFavorite.Click += new System.EventHandler(this.btnFavorite_Click);
             // 
-            // btnFavorites
+            // btnFavoritesList
             // 
-            this.btnFavorites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnFavoritesList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFavorites.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnFavorites.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFavorites.Location = new System.Drawing.Point(401, 524);
-            this.btnFavorites.Name = "btnFavorites";
-            this.btnFavorites.Size = new System.Drawing.Size(103, 31);
-            this.btnFavorites.TabIndex = 18;
-            this.btnFavorites.Text = "Favoritos";
-            this.btnFavorites.UseVisualStyleBackColor = true;
-            this.btnFavorites.Click += new System.EventHandler(this.btnFavorites_Click);
-            // 
-            // lblTlpYear
-            // 
-            this.lblTlpYear.AutoSize = true;
-            this.lblTlpYear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTlpYear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTlpYear.Location = new System.Drawing.Point(3, 140);
-            this.lblTlpYear.Name = "lblTlpYear";
-            this.lblTlpYear.Size = new System.Drawing.Size(141, 28);
-            this.lblTlpYear.TabIndex = 10;
-            this.lblTlpYear.Text = "Ano Modelo:";
-            this.lblTlpYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTlpYearInfo
-            // 
-            this.lblTlpYearInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTlpYearInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTlpYearInfo.Font = new System.Drawing.Font("Verdana", 9.75F);
-            this.lblTlpYearInfo.Location = new System.Drawing.Point(150, 140);
-            this.lblTlpYearInfo.Name = "lblTlpYearInfo";
-            this.lblTlpYearInfo.Size = new System.Drawing.Size(339, 28);
-            this.lblTlpYearInfo.TabIndex = 11;
-            this.lblTlpYearInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTlpPrice
-            // 
-            this.lblTlpPrice.AutoSize = true;
-            this.lblTlpPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTlpPrice.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTlpPrice.Location = new System.Drawing.Point(3, 168);
-            this.lblTlpPrice.Name = "lblTlpPrice";
-            this.lblTlpPrice.Size = new System.Drawing.Size(141, 28);
-            this.lblTlpPrice.TabIndex = 12;
-            this.lblTlpPrice.Text = "Preço Médio:";
-            this.lblTlpPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTlpPriceInfo
-            // 
-            this.lblTlpPriceInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTlpPriceInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTlpPriceInfo.Font = new System.Drawing.Font("Verdana", 9.75F);
-            this.lblTlpPriceInfo.Location = new System.Drawing.Point(150, 168);
-            this.lblTlpPriceInfo.Name = "lblTlpPriceInfo";
-            this.lblTlpPriceInfo.Size = new System.Drawing.Size(339, 28);
-            this.lblTlpPriceInfo.TabIndex = 13;
-            this.lblTlpPriceInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFavoritesList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnFavoritesList.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFavoritesList.Location = new System.Drawing.Point(401, 524);
+            this.btnFavoritesList.Name = "btnFavoritesList";
+            this.btnFavoritesList.Size = new System.Drawing.Size(103, 31);
+            this.btnFavoritesList.TabIndex = 18;
+            this.btnFavoritesList.Text = "Favoritos";
+            this.btnFavoritesList.UseVisualStyleBackColor = true;
+            this.btnFavoritesList.Click += new System.EventHandler(this.btnFavoritesList_Click);
             // 
             // frmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 567);
-            this.Controls.Add(this.btnFavorites);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFavoritesList);
+            this.Controls.Add(this.btnFavorite);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tlpVehiclesInfo);
             this.Controls.Add(this.grpDisclaimer);
             this.Controls.Add(this.cmbYear);
@@ -566,9 +567,9 @@
         private System.Windows.Forms.Label lblTlpFipeCodeInfo;
         private System.Windows.Forms.Label lblTlpFipeCode;
         private System.Windows.Forms.Label lblTlpReferenceInfo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnFavorites;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnFavorite;
+        private System.Windows.Forms.Button btnFavoritesList;
         private System.Windows.Forms.Label lblTlpYearInfo;
         private System.Windows.Forms.Label lblTlpYear;
         private System.Windows.Forms.Label lblTlpPriceInfo;

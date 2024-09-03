@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFavorites));
             this.lvwFavorites = new System.Windows.Forms.ListView();
-            this.chBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFipeCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReference = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnBack = new System.Windows.Forms.Button();
             this.btnRemoveFavorite = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -48,45 +43,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvwFavorites.BackColor = System.Drawing.SystemColors.Menu;
-            this.lvwFavorites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chBrand,
-            this.chYear,
-            this.chPrice,
-            this.chFipeCode,
-            this.chReference});
+            this.lvwFavorites.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvwFavorites.FullRowSelect = true;
+            this.lvwFavorites.GridLines = true;
+            this.lvwFavorites.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwFavorites.HideSelection = false;
-            this.lvwFavorites.HoverSelection = true;
             this.lvwFavorites.Location = new System.Drawing.Point(12, 48);
             this.lvwFavorites.Name = "lvwFavorites";
             this.lvwFavorites.Size = new System.Drawing.Size(1030, 529);
             this.lvwFavorites.TabIndex = 0;
             this.lvwFavorites.UseCompatibleStateImageBehavior = false;
             this.lvwFavorites.View = System.Windows.Forms.View.Details;
-            // 
-            // chBrand
-            // 
-            this.chBrand.Text = "Marca";
-            this.chBrand.Width = 222;
-            // 
-            // chYear
-            // 
-            this.chYear.Text = "Ano";
-            this.chYear.Width = 179;
-            // 
-            // chPrice
-            // 
-            this.chPrice.Text = "Preço";
-            this.chPrice.Width = 131;
-            // 
-            // chFipeCode
-            // 
-            this.chFipeCode.Text = "Código Fipe";
-            this.chFipeCode.Width = 146;
-            // 
-            // chReference
-            // 
-            this.chReference.Text = "Referência";
-            this.chReference.Width = 168;
             // 
             // btnBack
             // 
@@ -112,6 +79,7 @@
             this.btnRemoveFavorite.TabIndex = 14;
             this.btnRemoveFavorite.Text = "Remover Favorito";
             this.btnRemoveFavorite.UseVisualStyleBackColor = true;
+            this.btnRemoveFavorite.Click += new System.EventHandler(this.btnRemoveFavorite_Click);
             // 
             // lblTitle
             // 
@@ -153,16 +121,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lvwFavorites;
-        public System.Windows.Forms.ColumnHeader chBrand;
-        public System.Windows.Forms.ColumnHeader chYear;
-        public System.Windows.Forms.ColumnHeader chPrice;
-        public System.Windows.Forms.ColumnHeader chFipeCode;
-        public System.Windows.Forms.ColumnHeader chReference;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnRemoveFavorite;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlDivision;
+        private System.Windows.Forms.ListView lvwFavorites;
     }
 }
