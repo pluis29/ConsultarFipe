@@ -58,7 +58,7 @@
             this.lvwFavorites.HoverSelection = true;
             this.lvwFavorites.Location = new System.Drawing.Point(12, 48);
             this.lvwFavorites.Name = "lvwFavorites";
-            this.lvwFavorites.Size = new System.Drawing.Size(853, 493);
+            this.lvwFavorites.Size = new System.Drawing.Size(1030, 529);
             this.lvwFavorites.TabIndex = 0;
             this.lvwFavorites.UseCompatibleStateImageBehavior = false;
             this.lvwFavorites.View = System.Windows.Forms.View.Details;
@@ -93,7 +93,7 @@
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(565, 548);
+            this.btnBack.Location = new System.Drawing.Point(742, 584);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(300, 31);
             this.btnBack.TabIndex = 13;
@@ -106,7 +106,7 @@
             this.btnRemoveFavorite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRemoveFavorite.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRemoveFavorite.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveFavorite.Location = new System.Drawing.Point(12, 548);
+            this.btnRemoveFavorite.Location = new System.Drawing.Point(12, 584);
             this.btnRemoveFavorite.Name = "btnRemoveFavorite";
             this.btnRemoveFavorite.Size = new System.Drawing.Size(369, 32);
             this.btnRemoveFavorite.TabIndex = 14;
@@ -130,14 +130,14 @@
             this.pnlDivision.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlDivision.Location = new System.Drawing.Point(12, 37);
             this.pnlDivision.Name = "pnlDivision";
-            this.pnlDivision.Size = new System.Drawing.Size(855, 2);
+            this.pnlDivision.Size = new System.Drawing.Size(1032, 2);
             this.pnlDivision.TabIndex = 16;
             // 
             // FrmFavorites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 585);
+            this.ClientSize = new System.Drawing.Size(1054, 621);
             this.Controls.Add(this.pnlDivision);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnRemoveFavorite);

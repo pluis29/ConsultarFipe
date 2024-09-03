@@ -34,6 +34,12 @@ namespace ConsultarFipeLibrary.Services
             var response = await _client.GetAsync<List<Year>>(request);
             return response;
         }
+        public async Task<Value> GetValueAsync(string type, string brandCode, string modelCode, string yearCode)
+        {
+            var request = new RestRequest($"{type}/marcas/{brandCode}/modelos/{modelCode}/anos/{yearCode}", Method.Get);
+            var response = await _client.GetAsync<Value>(request);
+            return response;
+        }
 
     }
 }

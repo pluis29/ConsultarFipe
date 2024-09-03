@@ -2,6 +2,7 @@
 using ConsultarFipeLibrary.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -14,6 +15,10 @@ namespace ConsultarFipe
         private List<Brand> brands;
         private List<Model> models;
         private List<Year> years;
+
+        private string lastBrand = "";
+        private string lastModel = "";
+        private string lastYear = "";
 
         public frmSearch()
         {
@@ -113,5 +118,65 @@ namespace ConsultarFipe
                 }
             }
         }
+
+        private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbYear.SelectedItem is string yearName)
+            {
+                var selectedYear = years.FirstOrDefault(y => y.Nome == yearName);
+                if (selectedYear != null)
+                {
+                    vehicle.Year = (selectedYear.Nome, selectedYear.Codigo);
+                }
+            }
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            if (ValidateSearchForm() && IsNewSearch())
+            {
+                Debug.WriteLine($"ret form");
+                var value = await fipeApi.GetValueAsync(vehicle.Type.Name, vehicle.Brand.Code, vehicle.Model.Code, vehicle.Year.Code);
+                FillTable(value);
+            }
+        }
+
+        private void FillTable(Value v)
+        {
+            lblTlpReferenceInfo.Text = v.MesReferencia;
+            lblTlpFipeCodeInfo.Text = v.CodigoFipe;
+            lblTlpBrandInfo.Text = v.Marca;
+            lblTlpModelInfo.Text = v.Modelo;
+            lblTlpGasInfo.Text = v.Combustivel;
+            lblTlpYearInfo.Text = Convert.ToString(v.AnoModelo);
+            lblTlpPriceInfo.Text = v.Valor;
+        }
+
+        private bool IsNewSearch()
+        {
+            string currentBrand = cmbBrand.SelectedItem.ToString();
+            string currentModel = cmbModel.SelectedItem.ToString();
+            string currentYear = cmbYear.SelectedItem.ToString();
+
+            if (currentBrand == lastBrand && currentModel == lastModel && currentYear == lastYear)
+            {
+                return false;
+            }
+            lastBrand = currentBrand;
+            lastModel = currentModel;
+            lastYear = currentYear;
+            return true;
+        }
+
+        private bool ValidateSearchForm()
+        {
+            if (cmbBrand.SelectedIndex == -1 || cmbModel.SelectedIndex == -1 || cmbYear.SelectedIndex == -1)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
     }
 }
