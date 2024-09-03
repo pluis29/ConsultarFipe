@@ -176,12 +176,15 @@
             // 
             // cmbBrand
             // 
+            this.cmbBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBrand.FormattingEnabled = true;
             this.cmbBrand.ItemHeight = 13;
             this.cmbBrand.Location = new System.Drawing.Point(175, 156);
             this.cmbBrand.Name = "cmbBrand";
             this.cmbBrand.Size = new System.Drawing.Size(213, 21);
             this.cmbBrand.TabIndex = 5;
+            this.cmbBrand.SelectedIndexChanged += new System.EventHandler(this.cmbBrand_SelectedIndexChanged);
             // 
             // cmbModel
             // 
@@ -191,6 +194,7 @@
             this.cmbModel.Name = "cmbModel";
             this.cmbModel.Size = new System.Drawing.Size(213, 21);
             this.cmbModel.TabIndex = 6;
+            this.cmbModel.SelectedIndexChanged += new System.EventHandler(this.cmbModel_SelectedIndexChanged);
             // 
             // lblModel
             // 
