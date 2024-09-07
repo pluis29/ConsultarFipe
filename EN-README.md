@@ -13,6 +13,8 @@ This application allows you to query the Tabela Fipe through the  [FIPE API](htt
 
 - This project was developed as part of the [#7DaysOfCode](https://7daysofcode.io/matricula/windows-forms) challenge, which aims to build a desktop application using **Windows Forms** and consuming a Rest API with **C#**.
 
+![aLKeDT4LbR](https://github.com/user-attachments/assets/cb5b6767-bf5d-4d68-9aed-c79032d7c223)
+
 ## Features
 
 **Search:** Through forms, users can specify their vehicle of choice and find updated information.
