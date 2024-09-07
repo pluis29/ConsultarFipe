@@ -17,6 +17,7 @@ namespace ConsultarFipe
 
         private void PopulateListView()
         {
+            FavoritesManager.LoadFavoritesFromFile();
             List<VehicleFavorite> favorites = FavoritesManager.GetFavorites();
 
             lvwFavorites.Items.Clear();

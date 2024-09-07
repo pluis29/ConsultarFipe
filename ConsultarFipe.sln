@@ -7,20 +7,40 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultarFipe", "ConsultarF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultarFipeLibrary", "ConsultarFipeLibrary\ConsultarFipeLibrary.csproj", "{60D0EB11-2C8D-447E-BB4A-6299E848335A}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "ConsultarFipeInstaller", "ConsultarFipeInstaller\ConsultarFipeInstaller.aiproj", "{6EFD1F75-E072-41DB-A0F6-7D749918959E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DefaultBuild|Any CPU = DefaultBuild|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.All|Any CPU.Build.0 = Release|Any CPU
 		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.DefaultBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
 		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3676AE96-5F10-46F6-BBD0-2DB77A170654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.All|Any CPU.Build.0 = Release|Any CPU
 		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.DefaultBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
 		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60D0EB11-2C8D-447E-BB4A-6299E848335A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.All|Any CPU.ActiveCfg = DefaultBuild
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.All|Any CPU.Build.0 = DefaultBuild
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.Debug|Any CPU.Build.0 = DefaultBuild
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.DefaultBuild|Any CPU.ActiveCfg = DefaultBuild
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.DefaultBuild|Any CPU.Build.0 = DefaultBuild
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{6EFD1F75-E072-41DB-A0F6-7D749918959E}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

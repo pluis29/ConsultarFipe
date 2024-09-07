@@ -210,6 +210,7 @@ namespace ConsultarFipe
 
         private bool IsVehicleInFavorites()
         {
+            FavoritesManager.LoadFavoritesFromFile();
             return FavoritesManager.Favorites.Any(v =>
             v.Marca == lblTlpBrandInfo.Text &&
             v.Modelo == lblTlpModelInfo.Text &&

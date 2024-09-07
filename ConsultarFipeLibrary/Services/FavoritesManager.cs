@@ -10,7 +10,7 @@ namespace ConsultarFipeLibrary.Services
     public static class FavoritesManager
     {
         public static List<VehicleFavorite> Favorites = new List<VehicleFavorite>();
-        private static readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Favoritos", "favorites.json");
+        private static readonly string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Favoritos", "favorites.json");
         static FavoritesManager()
         {
             string directoryPath = Path.GetDirectoryName(filePath);
@@ -42,7 +42,7 @@ namespace ConsultarFipeLibrary.Services
             File.WriteAllText(filePath, json);
         }
 
-        private static void LoadFavoritesFromFile()
+        public static void LoadFavoritesFromFile()
         {
             if (File.Exists(filePath))
             {
@@ -51,7 +51,17 @@ namespace ConsultarFipeLibrary.Services
 
                 if (loadedFavorites != null)
                 {
+                    Favorites.Clear();
                     Favorites.AddRange(loadedFavorites);
+                }
+            }
+            else
+            {
+                Favorites.Clear();
+                string directoryPath = Path.GetDirectoryName(filePath);
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
                 }
             }
         }
