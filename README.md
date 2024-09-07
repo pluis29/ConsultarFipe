@@ -13,6 +13,8 @@ Esta aplicação permite consultar a Tabela Fipe através da [FIPE API](https://
 
 - Este projeto foi desenvolvido como parte do desafio [#7DaysOfCode](https://7daysofcode.io/matricula/windows-forms), que visa construir uma aplicação desktop utilizando **Windows Forms** e consumindo uma API Rest com **C#**.
 
+![aLKeDT4LbR](https://github.com/user-attachments/assets/d6855465-1f65-42de-aab9-1b7fe7e0556c)
+
 ## Features
 
 **Pesquisa:** Através de formulários, o usuário pode especificar seu veículo de escolha e encontrar suas informações atualizadas.
